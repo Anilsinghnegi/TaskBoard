@@ -31,7 +31,7 @@ const TeamCollaborationBoard = () => {
     boardId: selectedBoard?._id || "",
   });
 
-  const API_BASE_URL = "https://task-board-ashen.vercel.app";
+  const API_BASE_URL = "http://localhost:3030";
 
   // API helper functions
   const apiCall = async (endpoint, options = {}) => {
