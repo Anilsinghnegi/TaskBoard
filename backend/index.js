@@ -7,7 +7,7 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(
   cors({
-    origin: "https://task-board-ashen.vercel.app",
+    origin: "https://task-board-frontend-five.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
@@ -20,7 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/test", (req, res) => res.send("Server is up!"));
+// app.get("/test", (req, res) => res.send("Server is up!"));
 
 // Routes
 const boardRoutes = require("./routes/boardRoutes");
