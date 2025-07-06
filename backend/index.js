@@ -7,7 +7,7 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://task-board-ashen.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
