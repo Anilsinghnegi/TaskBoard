@@ -15,7 +15,8 @@ app.use(express.json());
 
 app.use((req, res, next) => {
   console.log("Request:", req.method, req.url, req.body);
-  res.send('<h1>Server is Running</h1>')
+  res.send('<h1>Server is Running</h1>');
+  res.send(req.method, req.url, req.body)
   next();
 });
 
