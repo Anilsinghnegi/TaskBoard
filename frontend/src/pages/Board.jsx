@@ -30,7 +30,9 @@ const Board = () => {
   const [editingBoard, setEditingBoard] = useState(null);
   const [editBoardName, setEditBoardName] = useState("");
 
-  const API_BASE_URL = "https://task-board-ashen.vercel.app";
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  console.log("Base URL --------> ",API_BASE_URL)
+  // const API_BASE_URL = import.meta.env.API_BASE_URL;
 
   const apiCall = async (endpoint, options = {}) => {
     try {

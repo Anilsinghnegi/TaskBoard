@@ -1,13 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-require("dotenv").config();
+const dotenv = require('dotenv');
+dotenv.config();
 const PORT = process.env.PORT;
-
+const APP_URL = process.env.REACT_APP_URL;
 const app = express();
 app.use(
   cors({
-    origin:  "https://task-board-frontend-five.vercel.app",
+    origin:  APP_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
@@ -17,9 +18,7 @@ app.use((req, res, next) => {
   console.log("Request:", req.method, req.url, req.body);
   next();
 });
-
 app.get("/test", (req, res) => res.send("Server is up!"));
-
 // Routes
 const boardRoutes = require("./routes/boardRoutes");
 const taskRoutes = require("./routes/taskRoutes");
